@@ -8,7 +8,15 @@ public class Incubyte {
 		}
 		int sum = 0;
 		String[] nums;
-		nums= numbers.split(",|\\\n");
+		
+		String delimeters = ",|\\\n";
+		if(numbers.indexOf("//")==0)
+		{
+			String d = numbers.substring(numbers.indexOf("//")+2, numbers.indexOf("\n"));
+			numbers = numbers.substring(numbers.indexOf("\n")+1);
+			delimeters = delimeters+"|\\"+d;
+		}
+		nums= numbers.split(delimeters);
 		int l= nums.length;
 		try {
 		if(l>5) {throw new Exception("More than 5 numbers");}

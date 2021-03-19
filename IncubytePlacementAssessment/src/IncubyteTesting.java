@@ -77,6 +77,20 @@ public class IncubyteTesting {
 		Incubyte i_test = new Incubyte();
 		assertEquals(11,i_test.Add("1,2,1001,5,3"));
 	}
+	
+	
+	//default delimeter at the starting
+	@Test() 
+	public void test_9() throws Exception {
+		Incubyte i_test = new Incubyte();
+		assertEquals(10,i_test.Add("//;\n1;2;3;4"));
+	}
+	
+	@Test() 
+	public void test_10() throws Exception {
+		Incubyte i_test = new Incubyte();
+		assertEquals(10,i_test.Add("//*\n1*2*3*4"));
+	}
 
 
 	
