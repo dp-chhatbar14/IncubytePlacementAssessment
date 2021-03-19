@@ -91,6 +91,20 @@ public class IncubyteTesting {
 		Incubyte i_test = new Incubyte();
 		assertEquals(10,i_test.Add("//*\n1*2*3*4"));
 	}
+	
+	
+	//Multiple delimeters
+	@Test() 
+	public void test_11() throws Exception {
+		Incubyte i_test = new Incubyte();
+		assertEquals(10,i_test.Add("//*\n1*2,3\n4"));
+	}
+	
+	@Test() 
+	public void test_12() throws Exception {
+		Incubyte i_test = new Incubyte();
+		assertEquals(10,i_test.Add("//;\n1;2;3\n4"));
+	}
 
 
 	
