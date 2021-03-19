@@ -39,4 +39,25 @@ public class IncubyteTesting {
 		test.Add(numbers);     
 	}
 	
+	
+	//Tests for string having new lines between numbers
+	@Test() 
+	public void test_5() throws Exception {
+		Incubyte i_test = new Incubyte();
+		assertEquals(6,i_test.Add("1\n2,3"));
+	}
+	
+	@Test() 
+	public void test_6() throws Exception {
+		Incubyte i_test = new Incubyte();
+		assertEquals(6,i_test.Add("1,2\n3"));
+	}
+	
+	@Test() 
+	public void test_7() throws Exception {
+		Incubyte i_test = new Incubyte();
+		assertEquals(6,i_test.Add("1\n2\n3"));
+	}
+
+	
 }

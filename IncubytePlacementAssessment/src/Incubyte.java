@@ -8,7 +8,7 @@ public class Incubyte {
 		}
 		int sum = 0;
 		String[] nums;
-		nums= numbers.split(",");
+		nums= numbers.split(",|\\\n");
 		int l= nums.length;
 		try {
 		if(l>5) {throw new Exception("More than 5 numbers");}
