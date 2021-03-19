@@ -69,6 +69,15 @@ public class IncubyteTesting {
 		System.out.println("Negative numbers not allowed");     
 		test2.Add(numbers2);     
 	}
+	
+	
+	//numbers greater than 1000 are ignored
+	@Test() 
+	public void test_8() throws Exception {
+		Incubyte i_test = new Incubyte();
+		assertEquals(11,i_test.Add("1,2,1001,5,3"));
+	}
+
 
 	
 }

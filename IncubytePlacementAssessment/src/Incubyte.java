@@ -18,8 +18,12 @@ public class Incubyte {
 			int num=Integer.parseInt(nums[i]);
 			if(num>0) 
 			{
-				sum=sum+num;
+				if(num<1000) 
+				{
+					sum=sum+num;
+				}
 				i=i+1;
+				
 			}
 			else{throw new Exception("Negative numbers not allowed");}
 		}
