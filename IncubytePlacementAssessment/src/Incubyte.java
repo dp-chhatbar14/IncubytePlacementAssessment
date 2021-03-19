@@ -1,6 +1,6 @@
 public class Incubyte {
 
-	int Add (String numbers)
+	int Add (String numbers) throws Exception
 	{
 		if(numbers.equals(""))
 		{
@@ -10,7 +10,8 @@ public class Incubyte {
 		String[] nums;
 		nums= numbers.split(",");
 		int l= nums.length;
-		
+		try {
+		if(l>5) {throw new Exception("More than 5 numbers");}
 		int i=0;
 		while (i<l)
 		{
@@ -18,5 +19,7 @@ public class Incubyte {
 			i=i+1;
 		}
 		return sum;
-	}
+		}
+		finally {}
+		}
 }
