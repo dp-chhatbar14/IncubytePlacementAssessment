@@ -58,6 +58,17 @@ public class IncubyteTesting {
 		Incubyte i_test = new Incubyte();
 		assertEquals(6,i_test.Add("1\n2\n3"));
 	}
+	
+	
+	//Test for negative numbers more that 5
+	String numbers2 = "1,2,-3";	
+	Incubyte test2 = new Incubyte();
+   
+	@Test(expected = Exception.class)
+	public void testAdd2() throws Exception {	
+		System.out.println("Negative numbers not allowed");     
+		test2.Add(numbers2);     
+	}
 
 	
 }

@@ -15,8 +15,13 @@ public class Incubyte {
 		int i=0;
 		while (i<l)
 		{
-			sum=sum+Integer.parseInt(nums[i]);
-			i=i+1;
+			int num=Integer.parseInt(nums[i]);
+			if(num>0) 
+			{
+				sum=sum+num;
+				i=i+1;
+			}
+			else{throw new Exception("Negative numbers not allowed");}
 		}
 		return sum;
 		}
