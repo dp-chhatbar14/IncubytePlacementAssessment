@@ -83,13 +83,13 @@ public class IncubyteTesting {
 	@Test() 
 	public void test_9() throws Exception {
 		Incubyte i_test = new Incubyte();
-		assertEquals(10,i_test.Add("//;\n1;2;3;4"));
+		assertEquals(10,i_test.Add("//[;]\n1;2;3;4"));
 	}
 	
 	@Test() 
 	public void test_10() throws Exception {
 		Incubyte i_test = new Incubyte();
-		assertEquals(10,i_test.Add("//*\n1*2*3*4"));
+		assertEquals(10,i_test.Add("//[*]\n1*2*3*4"));
 	}
 	
 	
@@ -97,15 +97,33 @@ public class IncubyteTesting {
 	@Test() 
 	public void test_11() throws Exception {
 		Incubyte i_test = new Incubyte();
-		assertEquals(10,i_test.Add("//*\n1*2,3\n4"));
+		assertEquals(10,i_test.Add("//[*][;]\n1*2;3\n4"));
 	}
 	
 	@Test() 
 	public void test_12() throws Exception {
 		Incubyte i_test = new Incubyte();
-		assertEquals(10,i_test.Add("//;\n1;2;3\n4"));
+		assertEquals(10,i_test.Add("//[;][**]\n1;2**3\n4"));
 	}
-
+	
+	//Multiple Delimeters with any length
+	@Test() 
+	public void test_13() throws Exception {
+		Incubyte i_test = new Incubyte();
+		assertEquals(10,i_test.Add("//[***][;]\n1;2***3\n4"));
+	}
+	
+	@Test() 
+	public void test_14() throws Exception {
+		Incubyte i_test = new Incubyte();
+		assertEquals(10,i_test.Add("//[;;;][*]\n1;;;2*3\n4"));
+	}
+	
+	@Test() 
+	public void test_15() throws Exception {
+		Incubyte i_test = new Incubyte();
+		assertEquals(10,i_test.Add("//[*;][****]\n1*;2****3\n4"));
+	}
 
 	
 }

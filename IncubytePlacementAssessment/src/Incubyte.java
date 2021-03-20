@@ -14,7 +14,18 @@ public class Incubyte {
 		{
 			String d = numbers.substring(numbers.indexOf("//")+2, numbers.indexOf("\n"));
 			numbers = numbers.substring(numbers.indexOf("\n")+1);
-			delimeters = delimeters+"|\\"+d;
+			
+			for (int i=0;i<d.length();i++)
+			{
+				if (d.charAt(i)=='[')
+				{
+					delimeters= delimeters+"|";
+				}
+				else if (d.charAt(i)!=']')
+				{
+					delimeters= delimeters+"\\"+d.charAt(i);
+				}
+			}
 		}
 		nums= numbers.split(delimeters);
 		int l= nums.length;
